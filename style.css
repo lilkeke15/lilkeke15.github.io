@@ -4,7 +4,7 @@
        padding: 10px;
        font-family: arial;
    }
-   id=all-contents {
+   #all-contents {
      max-width: 800px;
        margin: auto;
    }
