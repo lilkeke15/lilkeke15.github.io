@@ -79,10 +79,10 @@ function update() {
 }
 
 function checkForNewDirection(event) {
-  /*
+  /* 
   TODO 6b: Update snake.head.direction based on the value of activeKey.
- 
- 
+  
+  
   BONUS: Only allow direction changes to take place if the new direction is
   perpendicular to the current direction
   */
@@ -98,7 +98,7 @@ function checkForNewDirection(event) {
   if (activeKey === KEY.DOWN) {
     snake.head.direction = "down";
   }
- 
+  
    console.log(snake.head.direction);
 
   // FILL IN THE REST
@@ -107,14 +107,14 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  /*
+  /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
- 
-  HINT: To complete this TODO we must figure out the next direction, row, and
-  column for each snakeSquare in the snake's body. The parts of the snake are
-  stored in the Array snake.body and each part knows knows its current
-  column/row properties.
- 
+  
+  HINT: To complete this TODO we must figure out the next direction, row, and 
+  column for each snakeSquare in the snake's body. The parts of the snake are 
+  stored in the Array snake.body and each part knows knows its current 
+  column/row properties. 
+  
   */
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
@@ -131,11 +131,11 @@ function moveSnake() {
     snakeSquare.column = nextColumn;
     repositionSquare(snakeSquare);
 }
-  /*
+  /* 
 
- 
+  
   TODO 7: determine the next row and column for the snake's head
- 
+  
   HINT: The snake's head will need to move forward 1 square based on the value
   of snake.head.direction which may be one of "left", "right", "up", or "down"
   */
@@ -155,10 +155,10 @@ function moveSnake() {
 }
 
 function hasHitWall() {
-  /*
+  /* 
   TODO 8: Should return true if the snake's head has collided with the four walls of the
   board, false otherwise.
- 
+  
   HINT: What will the row and column of the snake's head be if this were the case?
   */
   ROWS; // the total number of ROWS in the board
@@ -179,10 +179,10 @@ function hasHitWall() {
 }
 
 function hasCollidedWithApple() {
-  /*
-  TODO 9: Should return true if the snake's head has collided with the apple,
+  /* 
+  TODO 9: Should return true if the snake's head has collided with the apple, 
   false otherwise
- 
+  
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
   apple.row; // the current row of the apple
@@ -197,7 +197,7 @@ function hasCollidedWithApple() {
     return false;
   }
 
- 
+  
 }
 
 function handleAppleCollision() {
@@ -209,12 +209,12 @@ function handleAppleCollision() {
   apple.element.remove();
   makeApple();
 
-  /*
+  /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
   .column and .direction properties of the snake.tail snakeSquare
- 
+  
   HINT: snake.tail.direction will be either "left", "right", "up", or "down".
-  If the tail is moving "left", place the next snakeSquare to its right.
+  If the tail is moving "left", place the next snakeSquare to its right. 
   If the tail is moving "down", place the next snakeSquare above it.
   etc...
   */
@@ -238,13 +238,13 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
-  /*
+  /* 
   TODO 12: Should return true if the snake's head has collided with any part of the
   snake's body.
- 
+  
   HINT: Each part of the snake's body is stored in the snake.body Array. The
   head and each part of the snake's body also knows its own row and column.
- 
+  
   */
  for(var i = 1; i < snake.body.length; i++){
   if(snake.head.row === snake.body[i].row){
@@ -325,10 +325,10 @@ function makeSnakeSquare(row, column) {
   snake.tail = snakeSquare;
 }
 
-/*
+/* 
   event.which returns the keycode of the key that is pressed when the
   keydown event occurs
- 
+  
   The KEY Object creates a map for the Arrow Keys to their keycode:
 
     KEY.LEFT = 37
@@ -380,7 +380,7 @@ function getRandomAvailablePosition() {
 
     /*
     TODO 13: After generating the random position determine if that position is
-    not occupied by a snakeSquare in the snake's body. If it is then set
+    not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
   }
